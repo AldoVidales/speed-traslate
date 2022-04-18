@@ -63,7 +63,7 @@ class ventana3:
         # oky=Button(self.ventana,text="OK",command=self.convertir)
         # oky.pack()
 
-        oky=Button(self.ventana,text="OK",command=self.suma)
+        oky=Button(self.ventana,text="OK",command=self.suma,)
         oky.pack(padx=10,pady=10)
 
 
