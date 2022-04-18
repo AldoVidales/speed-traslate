@@ -8,7 +8,7 @@ class ventana3:
         self.title="Speed traslate 2021"
         self.size="770x470"
         self.resiable=False
-        self.icon='C:/Users/aldov/Documents/Programacion/Python/Curso tkinter/imagenes\internet-speed.ico'
+        self.icon='imagenes\internet-speed.ico'
         
         
     
@@ -27,7 +27,13 @@ class ventana3:
   
 
 
-
+    def vol(self):
+        try:
+            self.volumen= int(self.Entry_Volumen.get())*(0.00026417205235815)
+            print(self.volumen)
+            return self.var2.set(self.volumen)
+        except:
+            print("No se pudo sorry")
     
         
 
@@ -41,28 +47,43 @@ class ventana3:
         self.ventana.resizable(0,0)
         self.ventana.iconbitmap(self.icon)
         self.var=StringVar()
+        self.var2=StringVar()
         titulo=Label(self.ventana,text="Convertidor")
-        titulo.grid(column=1,row=1)
+        titulo.pack(padx=10,pady=10)
         co2=Label(self.ventana, text="km/h")
-        co2.grid(column=1,row=2)
+        co2.pack(padx=10,pady=10)
         co=Label(self.ventana, text="m/s")
-        co.grid(column=6,row=5)
+        co.pack(padx=10,pady=10)
         
 
         self.E1 = Entry(self.ventana)
-        self.E1.grid(column=1,row=3)
+        self.E1.pack(padx=10,pady=10)
         # entry1=Entry(self.ventana,text=12)
         # entry1.place(x=50,y=20)
         # oky=Button(self.ventana,text="OK",command=self.convertir)
         # oky.pack()
 
         oky=Button(self.ventana,text="OK",command=self.suma)
-        oky.grid(column=6,row=3)
+        oky.pack(padx=10,pady=10)
 
 
         self.eq=Label(self.ventana,textvariable=self.var)
            
-        self.eq.grid(column=6,row=6)
+        self.eq.pack(padx=10,pady=10)
+
+
+
+        self.volumen=Label(self.ventana,text="Convertir cm3 a Galones")
+        self.volumen.pack(padx=10,pady=10)
+
+
+        self.Entry_Volumen=Entry(self.ventana)
+        self.Entry_Volumen.pack (padx=10,pady=10)
+        oky2=Button(self.ventana,text="OK",command=self.vol)
+        oky2.pack(padx=10,pady=10)
+        self.eq2=Label(self.ventana,textvariable=self.var2)
+        self.eq2.pack(padx=10,pady=10)
+
 
        
     
